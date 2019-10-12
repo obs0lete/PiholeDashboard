@@ -1,5 +1,5 @@
 # PiholeDashboard
-A web interface to show quick stats from Pi-hole and allow a user to disable it.
+A web interface to quickly disable Pi-hole and show some basic stats.
 
 ![image description](https://raw.githubusercontent.com/obs0lete/PiholeDashboard/master/images/screenshot.png)
 
@@ -10,7 +10,7 @@ A web interface to show quick stats from Pi-hole and allow a user to disable it.
 - php-curl
 
 # Getting started
-0. Install PHP 7.2, php-curl and a websevr (nginx).
+0. Install **PHP 7.2**, **php-curl** and a **websevr (nginx)**.
 1. Log into your Pi-hole and go to **Settings > API/Web Interface**.
 2. Click on the **Show API token** button, then **Yes, show API token**.
 3. Copy your **API token**.
