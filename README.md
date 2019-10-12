@@ -1,7 +1,7 @@
 # PiholeDashboard
 A web interface to show quick stats from Pi-hole and allow a user to disable it.
 
-![image description](https://imgur.com/a/42v44Ka)
+![image description](https://raw.githubusercontent.com/obs0lete/PiholeDashboard/master/images/screenshot.png)
 
 # Requirements:
 - A Pi-hole
