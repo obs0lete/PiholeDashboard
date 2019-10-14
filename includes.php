@@ -11,7 +11,7 @@
     $apiKeyURL = $piHole . "/settings.php?tab=api";
     
     // Add /api.php to the $piHole variable
-	$apiUrl = $piHole . "/api.php";    
+    $apiUrl = $piHole . "/api.php";    
     
     // Disable URL
     $disableUrl = $piHole . "/api.php?disable&auth=" . $apiKey;
