@@ -1,12 +1,14 @@
-// Reload Pi-hole stats every 5 seconds
-// this will refresh the .container-fluid div every 5 seconds to get fresh stats
+// Refresh the .container-fluid div every 5 seconds to get the latest details.
 function loadlink() {
   $('.container-fluid').load('index.php', function () {
     $(this).unwrap();
   });
 }
 
-loadlink(); // This will run on page load
+// If 
+if (disableRefresh == "false") {
+loadlink();
 setInterval(function () {
-  loadlink() // This will run after every 5 seconds
+  loadlink()
 }, 5000);
+}
