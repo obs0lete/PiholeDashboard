@@ -36,8 +36,12 @@
         // Check if the $piHole variable has been set
         if (empty($piHole)) {
             ?>
+                <!-- Disable the page refresh -->
+                <script>var disableRefresh = "true";</script>
                 <div class="alert alert-dismissable alert-danger">
-                    <strong>Warning!</strong> Pi-hole IP/URL not set!
+                    <strong>Pi-hole IP/URL not set!</strong>
+                    <br />
+                    Make sure you set <strong>$piHole</strong> correctly in <strong>includes.php</strong>.
                 </div>
             <?php
         }
@@ -48,13 +52,15 @@
             <!-- Disable the page refresh -->
             <script>var disableRefresh = "true";</script>
             <div class="alert alert-dismissable alert-danger">
-                <strong>Warning!</strong> No API Key is set! <a id="modal-664008" href="#modal-container-664008" class="alert-link" data-toggle="modal">Get your API Key</a>
+                <strong>No Pi-hole API Key is set!</strong>
+                <br />
+                    <a id="modal-664008" href="#modal-container-664008" class="alert-link" data-toggle="modal">How do I get my Pi-hole API Key?</a>
 			        <div class="modal fade" id="modal-container-664008" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				        <div class="modal-dialog" role="document">
 					        <div class="modal-content">
 						        <div class="modal-header">
 							        <h5 class="modal-title" id="myModalLabel">
-                                        How to get your Pi-holeAPI Key
+                                        How to get your Pi-hole API Key
 							        </h5> 
 							            <button type="button" class="close" data-dismiss="modal">
 								            <span aria-hidden="true">×</span>
