@@ -22,3 +22,6 @@ A simple web interface to quickly disable Pi-hole and show some basic stats.
 # To-do:
 - Better setup guide
 - Code clean-up
+- Planned features (for now):
+    - Disable for X amount of time in minutes
+    - WAN/LAN status
