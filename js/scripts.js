@@ -5,7 +5,7 @@ function loadlink() {
   });
 }
 
-// If 
+// Disable div refresh if disableRefresh = "true"
 if (disableRefresh == "false") {
 loadlink();
 setInterval(function () {
