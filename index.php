@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
-        <!-- Enable the page refresh -->
+        <!-- Allow page to refresh -->
         <script>var disableRefresh = "false";</script>
     </head>
 
@@ -36,7 +36,7 @@
         // Check if the $piHole variable has been set
         if (empty($piHole)) {
             ?>
-                <!-- Disable the page refresh -->
+                <!-- Disable the page from refresh -->
                 <script>var disableRefresh = "true";</script>
                 <div class="alert alert-dismissable alert-danger">
                     <strong>Pi-hole IP/URL not set!</strong>
@@ -49,7 +49,7 @@
         // Check if the $apiKey variable has been set
         if (empty($apiKey)) {
             ?>
-            <!-- Disable the page refresh -->
+            <!-- Disable the page from refresh -->
             <script>var disableRefresh = "true";</script>
             <div class="alert alert-dismissable alert-danger">
                 <strong>No Pi-hole API Key is set!</strong>
