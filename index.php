@@ -36,7 +36,7 @@
         // Check if the $piHole variable has been set
         if (empty($piHole)) {
             ?>
-                <!-- Disable the page from refresh -->
+                <!-- Disable the page from refreshing -->
                 <script>var disableRefresh = "true";</script>
                 <div class="alert alert-dismissable alert-danger">
                     <strong>Pi-hole IP/URL not set!</strong>
@@ -49,7 +49,7 @@
         // Check if the $apiKey variable has been set
         if (empty($apiKey)) {
             ?>
-            <!-- Disable the page from refresh -->
+            <!-- Disable the page from refreshing -->
             <script>var disableRefresh = "true";</script>
             <div class="alert alert-dismissable alert-danger">
                 <strong>No Pi-hole API Key is set!</strong>
