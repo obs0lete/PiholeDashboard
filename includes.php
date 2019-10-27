@@ -18,6 +18,10 @@
     
     // Enable URL
     $enableUrl = $piHole . "/api.php?enable&auth=" . $apiKey;
+
+    // Get last blocked domain
+    $getLastBlocked = $piHole . "/api.php?recentBlocked&auth=" . $apiKey;
+    $lastBlocked = file_get_contents("$getLastBlocked");
     
     // Get the results (JSON)
     $JSONResult = file_get_contents($apiUrl);

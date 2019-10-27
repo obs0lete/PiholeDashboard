@@ -102,7 +102,8 @@
     Total Queries: %s <br />
     Ads Blocked Today: %s <br />
     Percent Blocked: %u%% <br />
-    ", $statusResult, $domainsBlocked, $dnsQueries, $adsBlocked, $percentAdsBlocked);
+    Last Blocked: %s <br />
+    ", $statusResult, $domainsBlocked, $dnsQueries, $adsBlocked, $percentAdsBlocked, $lastBlocked);
     ?>
     <br />
     <form>
