@@ -129,6 +129,7 @@
     <br />
     <form>
         <button type="submit" class="btn btn-outline-danger button disable-button" id="disable" method="get" formaction="disable.php">Disable</button>
+        <br /><br />
         <button type="submit" class="btn btn-outline-success button enable-button" id="enable" method="get" formaction="enable.php">Enable</button>
     </form>
 
