@@ -1,13 +1,30 @@
 <!DOCTYPE html>
     <html lang="en">
     <head>
-        <title>Pi-hole ad-block toggle</title>
+        <title>Pi-hole Toggle</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
-        <!-- Allow page to refresh -->
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="https://toggle.obs0lete.com/imgs/favicons/apple-touch-icon.png?v=5AB4KMlkQk">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://toggle.obs0lete.com/imgs/favicons/favicon-32x32.png?v=5AB4KMlkQk">
+        <link rel="icon" type="image/png" sizes="194x194" href="https://toggle.obs0lete.com/imgs/favicons/favicon-194x194.png?v=5AB4KMlkQk">
+        <link rel="icon" type="image/png" sizes="192x192" href="https://toggle.obs0lete.com/imgs/favicons/android-chrome-192x192.png?v=5AB4KMlkQk">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://toggle.obs0lete.com/imgs/favicons/favicon-16x16.png?v=5AB4KMlkQk">
+        <link rel="manifest" href="https://toggle.obs0lete.com/imgs/favicons/site.webmanifest?v=5AB4KMlkQk">
+        <link rel="mask-icon" href="https://toggle.obs0lete.com/imgs/favicons/safari-pinned-tab.svg?v=5AB4KMlkQk" color="#5a5a59">
+        <link rel="shortcut icon" href="https://toggle.obs0lete.com/imgs/favicons/favicon.ico?v=5AB4KMlkQk">
+        <meta name="apple-mobile-web-app-title" content="Pi-hole Toggle">
+        <meta name="application-name" content="Pi-hole Toggle">
+        <meta name="msapplication-TileColor" content="#5a5a59">
+        <meta name="msapplication-TileImage" content="https://toggle.obs0lete.com/imgs/favicons/mstile-144x144.png?v=5AB4KMlkQk">
+        <meta name="msapplication-config" content="https://toggle.obs0lete.com/imgs/favicons/browserconfig.xml?v=5AB4KMlkQk">
+        <meta name="theme-color" content="#ffffff">
+        
+        <!-- Enable the page refresh -->
         <script>var disableRefresh = "false";</script>
     </head>
 
@@ -17,7 +34,7 @@
                 <div class="col-md-4">
                     <!-- Pi-hole section -->
                     <h2>
-                        Pi-hole ad-block toggle
+                        Pi-hole Toggle
                     </h2>
                         Click <strong>Disable</strong> to disable ad-block. Once you have finished, click <strong>Enable.</strong>
                         <br/><br/>
@@ -36,7 +53,7 @@
         // Check if the $piHole variable has been set
         if (empty($piHole)) {
             ?>
-                <!-- Disable the page from refreshing -->
+                <!-- Disable the page refresh -->
                 <script>var disableRefresh = "true";</script>
                 <div class="alert alert-dismissable alert-danger">
                     <strong>Pi-hole IP/URL not set!</strong>
@@ -49,7 +66,7 @@
         // Check if the $apiKey variable has been set
         if (empty($apiKey)) {
             ?>
-            <!-- Disable the page from refreshing -->
+            <!-- Disable the page refresh -->
             <script>var disableRefresh = "true";</script>
             <div class="alert alert-dismissable alert-danger">
                 <strong>No Pi-hole API Key is set!</strong>
@@ -105,6 +122,7 @@
     Last Blocked: %s <br />
     ", $statusResult, $domainsBlocked, $dnsQueries, $adsBlocked, $percentAdsBlocked, $lastBlocked);
     ?>
+    <!-- ?php echo $lastBlocked; ? -->
     <br />
     <form>
         <button type="submit" class="btn btn-outline-danger button disable-button" id="disable" method="get" formaction="disable.php">Disable</button>
@@ -112,6 +130,7 @@
     </form>
 
     <!-- Scripts -->
+    <script src="js/tether.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
