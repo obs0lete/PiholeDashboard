@@ -1,9 +1,12 @@
 body {
-    color: #ffffff;
-    background-color: #2e2e2e;
-  }
+  color: #ffffff;
+  background-color: #2e2e2e;
+}
 .col-md-4 {
-    margin: 0 auto;
-    text-align: center;
-    padding-top: 50px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 50px;
+}
+.alert-danger .alert-link {
+color: #025aa5
 }

@@ -59,6 +59,9 @@
                     <strong>Pi-hole IP/URL not set!</strong>
                     <br />
                     Make sure you set <strong>$piHole</strong> correctly in <strong>includes.php</strong>.
+                    <br />
+                    E.g. http://pi.hole/admin/
+                    <br />
                 </div>
             <?php
         }
