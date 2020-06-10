@@ -69,7 +69,7 @@
         // Check if the $apiKey variable has been set
         if (empty($apiKey)) {
             ?>
-            <!-- Disable the page refresh -->
+            <!-- Disable page refresh -->
             <script>var disableRefresh = "true";</script>
             <div class="alert alert-dismissable alert-danger">
                 <strong>No Pi-hole API Key is set!</strong>
