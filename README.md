@@ -1,5 +1,5 @@
 # PiholeDashboard
-A simple web interface to quickly disable Pi-hole ad-blocking and show some basic stats.
+A simple web interface to quickly disable Pi-hole ad-blocking and show some basic stats. This was made with dark themes in mind.
 
 ![image description](https://raw.githubusercontent.com/obs0lete/PiholeDashboard/master/images/screenshot.png)
 
