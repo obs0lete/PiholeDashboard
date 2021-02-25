@@ -53,8 +53,6 @@
         // Check if the $piHole variable has been set
         if (empty($piHole)) {
             ?>
-                <!-- Disable the page refresh -->
-                <script>var disableRefresh = "true";</script>
                 <div class="alert alert-dismissable alert-danger">
                     <strong>Pi-hole IP/URL not set!</strong>
                     <br />
