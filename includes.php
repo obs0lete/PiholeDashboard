@@ -1,17 +1,27 @@
 <?php
 
+    /* Make sure that you install php-curl: https://stackoverflow.com/questions/38800606/how-to-install-php-curl-in-ubuntu-16-04
+     Update 2019/09/20: The above link does not seem to work. Use the following code:
+     1. php -v to get the php version
+     2. sudo apt-get install libssl1.1=1.1.1c-1
+     3. sudo apt-get install libcurl4
+     4. sudo apt-get install php7.2-curl (note: this should match php version)
+     5. sudo service nginx restart
+     */
+
     // Set your Pi-hole IP/URL here
     // Ex: $piHole = "http://192.168.1.2/admin";
-    $piHole = '';
+    
+    $piHole = "";
 
     // Set your API key here
-    $apiKey = '';
-
+    $apiKey = "";
+    
     // Set your API Key URL
     $apiKeyURL = $piHole . "/settings.php?tab=api";
     
     // Add /api.php to the $piHole variable
-    $apiUrl = $piHole . "/api.php";    
+	$apiUrl = $piHole . "/api.php";    
     
     // Disable URL
     $disableUrl = $piHole . "/api.php?disable&auth=" . $apiKey;
@@ -19,14 +29,21 @@
     // Enable URL
     $enableUrl = $piHole . "/api.php?enable&auth=" . $apiKey;
 
-    // Get last blocked domain
+    // Last blocked domain
     $getLastBlocked = $piHole . "/api.php?recentBlocked&auth=" . $apiKey;
     $lastBlocked = file_get_contents("$getLastBlocked");
+
+    // Get the system temperature
+    // Note: For this to work, you need to add www-data to the video group:
+    //  sudo usermod -aG video www-data
+    // Then reboot the Raspberry Pi.
+    // Source: https://stackoverflow.com/questions/30151661/running-vcgencmd-from-php-exec
+    $getTemp = exec("vcgencmd measure_temp | egrep -o '[0-9]*\.[0-9]*'");
     
     // Get the results (JSON)
     $JSONResult = file_get_contents($apiUrl);
      
-    // Decode the JSON results
+    //Decode the JSON results
     $JSON = json_decode($JSONResult, true);
     
     // Get the status results
@@ -40,4 +57,11 @@
     $dnsQueries = $JSON['dns_queries_today'];
     $adsBlocked = $JSON['ads_blocked_today'];
     $percentAdsBlocked = $JSON['ads_percentage_today'];
+    // Get the uptime values
+    $upTimeDays = $JSON['gravity_last_updated']['relative']['days'];
+    $upTimeHours = $JSON['gravity_last_updated']['relative']['hours'];
+    $upTimeMinutes = $JSON['gravity_last_updated']['relative']['minutes'];
+    // Combine these into the upTime variable
+    $upTime = " Days: " . $upTimeDays . " Hours: " . $upTimeHours . " Minutes: " . $upTimeMinutes;
+    $temp = $getTemp . "&deg;C"
 ?>

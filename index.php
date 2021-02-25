@@ -29,7 +29,7 @@
         function getInputValue(){
             var val = document.getElementById("disableTime").value;
                 if (val === "") {
-                    alert("You must enter a number, in minutes.");
+                    alert("You must enter a number, in minutes. ");
                 } else if (val === "0")  {
                     alert("You must enter a nummber greater than 0.");
                     return false;
@@ -135,12 +135,14 @@
     // Print the results
     printf("
     Status: %s <br />
+    Temp: %s </br />
+    Uptime: %s <br />
     Domains blocked: %s <br />
     Total Queries: %s <br />
     Ads Blocked Today: %s <br />
     Percent Blocked: %u%% <br />
     Last Blocked: %s <br />
-    ", $statusResult, $domainsBlocked, $dnsQueries, $adsBlocked, $percentAdsBlocked, $lastBlocked);
+    ", $statusResult, $temp, $upTime, $domainsBlocked, $dnsQueries, $adsBlocked, $percentAdsBlocked, $lastBlocked);
     ?>
     <br />
     </div>
