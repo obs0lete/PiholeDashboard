@@ -27,9 +27,17 @@
         <!-- Create an alert when disabling per X mins -->
         <script>
         function getInputValue(){
-            var inputVal = document.getElementById("disableTime").value;
-            alert("Pi-hole ad-blocking will be disabled for " + inputVal + " minute(s).\nAfter this time, Pi-hole will re-enable ad-blocking by itself.");
-        }
+            var val = document.getElementById("disableTime").value;
+                if (val === "") {
+                    alert("You must enter a number, in minutes. ");
+                } else if (val === "0")  {
+                    alert("You must enter a nummber greater than 0.");
+                    return false;
+                } else {
+                    alert("Pi-hole ad-blocking will be disabled for " + val + " minute(s).\nAfter this time, Pi-hole will re-enable ad-blocking by itself.");
+                return true;
+                }
+            }
         </script>
     </head>
 
@@ -42,7 +50,9 @@
                     <h2>
                         Pi-hole Toggle
                     </h2>
-                        Click <strong>Disable</strong> to indefinitely disable ad-blocking. Once you have finished, click <strong>Enable.</strong>
+                        Click <strong>Disable</strong> to indefinitely disable ad-blocking.
+                        <br/>
+                        Once you have finished, click <strong>Enable.</strong>
                         <br/>
                         You can also disable Pi-hole ad-blocking for a few minutes by entering a number in the textbox below and pressing the <strong>Disable (mins)</strong> button.
                         <br/><br/>
@@ -146,9 +156,9 @@
     <!-- Disable (min) buttons -->
     <form action="disableTime.php" method="post">
         <div class="input-group mb-3">
-            <input type="text" class="form-control" id="disableTime" name="disableTime" aria-label="disableTime">
+            <input type="number" class="form-control" id="disableTime" name="disableTime" aria-label="disableTime" placeholder="0" min="1" required>
                 <div class="input-group-append">
-                    <button type="submit" name="submit" class="btn btn-outline-secondary" type="button" onclick="getInputValue();">Disable (mins)</button>
+                &emsp;<button type="submit" name="submit" class="btn btn-outline-info" type="button" onclick="getInputValue();">Disable (mins)</button>
                 </div>
         </div>
     </form>
