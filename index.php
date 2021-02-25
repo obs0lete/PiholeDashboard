@@ -29,7 +29,7 @@
         function getInputValue(){
             var val = document.getElementById("disableTime").value;
                 if (val === "") {
-                    alert("You must enter a number, in minutes. ");
+                    alert("You must enter a number, in minutes.");
                 } else if (val === "0")  {
                     alert("You must enter a nummber greater than 0.");
                     return false;
