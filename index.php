@@ -28,7 +28,7 @@
         <script>
         function getInputValue(){
             var inputVal = document.getElementById("disableTime").value;
-            alert("Pi-hole will be disabled for " + inputVal + " minute(s).\nAfter this time, Pi-hole will re-enable itself.");
+            alert("Pi-hole ad-blocking will be disabled for " + inputVal + " minute(s).\nAfter this time, Pi-hole will re-enable ad-blocking by itself.");
         }
         </script>
     </head>
@@ -42,9 +42,9 @@
                     <h2>
                         Pi-hole Toggle
                     </h2>
-                        Click <strong>Disable</strong> to indefinitely disable ad-block. Once you have finished, click <strong>Enable.</strong>
+                        Click <strong>Disable</strong> to indefinitely disable ad-blocking. Once you have finished, click <strong>Enable.</strong>
                         <br/>
-                        You can also disable Pi-hole for a few minutes by entering a number in the textbox below and pressing the <strong>Disable (mins)</strong> button.
+                        You can also disable Pi-hole ad-blocking for a few minutes by entering a number in the textbox below and pressing the <strong>Disable (mins)</strong> button.
                         <br/><br/>
                          <p></p>
 
