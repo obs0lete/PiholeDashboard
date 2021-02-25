@@ -23,25 +23,34 @@
         <meta name="msapplication-TileImage" content="https://toggle.obs0lete.com/imgs/favicons/mstile-144x144.png?v=5AB4KMlkQk">
         <meta name="msapplication-config" content="https://toggle.obs0lete.com/imgs/favicons/browserconfig.xml?v=5AB4KMlkQk">
         <meta name="theme-color" content="#ffffff">
-        
-        <!-- Enable the page refresh -->
-        <script>var disableRefresh = "false";</script>
+
+        <!-- Create an alert when disabling per X mins -->
+        <script>
+        function getInputValue(){
+            var inputVal = document.getElementById("disableTime").value;
+            alert("Pi-hole will be disabled for " + inputVal + " minute(s).\nAfter this time, Pi-hole will re-enable itself.");
+        }
+        </script>
     </head>
 
     <body>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4">
+
                     <!-- Pi-hole section -->
                     <h2>
                         Pi-hole Toggle
                     </h2>
-                        Click <strong>Disable</strong> to disable ad-block. Once you have finished, click <strong>Enable.</strong>
+                        Click <strong>Disable</strong> to indefinitely disable ad-block. Once you have finished, click <strong>Enable.</strong>
+                        <br/>
+                        You can also disable Pi-hole for a few minutes by entering a number in the textbox below and pressing the <strong>Disable (mins)</strong> button.
                         <br/><br/>
                          <p></p>
 
 <?php
     include 'includes.php';
+
         // Prevent caching
         header("Expires: Tue, 03 Jul 2001 06:00:00 GMT");
         header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
@@ -53,8 +62,6 @@
         // Check if the $piHole variable has been set
         if (empty($piHole)) {
             ?>
-		<!-- Disable the page refresh -->
-                <script>var disableRefresh = "true";</script>
                 <div class="alert alert-dismissable alert-danger">
                     <strong>Pi-hole IP/URL not set!</strong>
                     <br />
@@ -69,8 +76,6 @@
         // Check if the $apiKey variable has been set
         if (empty($apiKey)) {
             ?>
-            <!-- Disable page refresh -->
-            <script>var disableRefresh = "true";</script>
             <div class="alert alert-dismissable alert-danger">
                 <strong>No Pi-hole API Key is set!</strong>
                 <br />
@@ -113,8 +118,10 @@
     ?>
 
     <!-- Print the Pi-hole IP/URL -->
+    <div id="results">
     Pi-hole URL: <a href="<?php echo $piHole; ?>" class="alert-link"><?php echo $piHole; ?></a><br />
     <?php
+
     // Print the results
     printf("
     Status: %s <br />
@@ -125,12 +132,25 @@
     Last Blocked: %s <br />
     ", $statusResult, $domainsBlocked, $dnsQueries, $adsBlocked, $percentAdsBlocked, $lastBlocked);
     ?>
-    <!-- ?php echo $lastBlocked; ? -->
     <br />
+    </div>
+
+    <!-- Enable/Disable buttons -->
     <form>
         <button type="submit" class="btn btn-outline-danger button disable-button" id="disable" method="get" formaction="disable.php">Disable</button>
         <br /><br />
         <button type="submit" class="btn btn-outline-success button enable-button" id="enable" method="get" formaction="enable.php">Enable</button>
+    </form>
+    <br />
+
+    <!-- Disable (min) buttons -->
+    <form action="disableTime.php" method="post">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="disableTime" name="disableTime" aria-label="disableTime">
+                <div class="input-group-append">
+                    <button type="submit" name="submit" class="btn btn-outline-secondary" type="button" onclick="getInputValue();">Disable (mins)</button>
+                </div>
+        </div>
     </form>
 
     <!-- Scripts -->

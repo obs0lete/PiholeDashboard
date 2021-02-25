@@ -1,14 +1,8 @@
-// Refresh the .container-fluid div every 5 seconds to get the latest details.
-function loadlink() {
-  $('.container-fluid').load('index.php', function () {
-    $(this).unwrap();
-  });
-}
+// // Refresh the #results div every 1 second to get the latest details.
 
-// Disable div refresh if disableRefresh = "true"
-if (disableRefresh == "false") {
-loadlink();
-setInterval(function () {
-  loadlink()
-}, 5000);
-}
+$(document).ready(function(){
+  setInterval(function(){
+        $("#results").load(window.location.href + " #results" );
+  }, 1000);
+  });
+  

@@ -18,3 +18,13 @@ font-size: 1.5rem;
 width: 200px;
 height: 50px;
 }
+
+input.form-control {
+max-width: 20% !important;
+}
+
+.input-group.mb-3 {
+margin-left: auto;
+margin-right: auto;
+width: 21em;
+}
