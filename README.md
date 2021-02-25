@@ -21,5 +21,7 @@ A simple web interface to quickly disable Pi-hole ad-blocking and show some basi
 
 # Usage
 To disable Pi-hole ad-blocking, click on **Disable**. This will disable ad-blocking infinitely.
+
 To (re)enable ad-blocking, click on **Enable**.
+
 You can also specify how long you want to disable ad-blocking for, in minutes. In the text box, enter the amount of minutes you want to disable as-blocking for, then click on the **Disable (mins)** button.
