@@ -1,9 +1,9 @@
 # PiholeDashboard
-A simple web interface to quickly disable Pi-hole and show some basic stats.
+A simple web interface to quickly disable Pi-hole ad-blocking and show some basic stats.
 
 ![image description](https://raw.githubusercontent.com/obs0lete/PiholeDashboard/master/images/screenshot.png)
 
-# Requirements:
+# Requirements
 - A Pi-hole
 - Web server (nginx)
 - PHP 7.2
@@ -19,9 +19,7 @@ A simple web interface to quickly disable Pi-hole and show some basic stats.
     - **$apiKey = ;** Enter your API key here
 5. Launch **index.php**
 
-# To-do:
-- Better setup guide
-- Code clean-up
-- Planned features (for now):
-    - Disable for X amount of time in minutes
-    - WAN/LAN status
+# Usage
+To disable Pi-hole ad-blocking, click on **Disable**. This will disable ad-blocking infinitely.
+To (re)enable ad-blocking, click on **Enable**.
+You can also specify how long you want to disable ad-blocking for, in minutes. In the text box, enter the amount of minutes you want to disable as-blocking for, then click on the **Disable (mins)** button.
