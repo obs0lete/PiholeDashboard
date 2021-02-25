@@ -5,19 +5,22 @@ A simple web interface to quickly disable Pi-hole ad-blocking and show some basi
 
 # Requirements
 - A Pi-hole
+- Raspberry Pi (this should work on other devices, but you'll need to adjust how the temperature stats are fetched for your device in the `includes.php` file.)
 - Web server (nginx)
 - PHP 7.2
 - php-curl
 
 # Getting started
-0. Install **PHP 7.2**, **php-curl** and a **websevr (nginx)**.
-1. Log into your Pi-hole and go to **Settings > API/Web Interface**.
-2. Click on the **Show API token** button, then **Yes, show API token**.
-3. Copy your **API token**.
-4. Edit the **includes.php** and edit the following:
+1. Install **PHP 7.2**, **php-curl** and a **websevr (nginx)**.
+2. Log into your Pi-hole and go to **Settings > API/Web Interface**.
+3. Click on the **Show API token** button, then **Yes, show API token**.
+4. Copy your **API token**.
+5. Edit the **includes.php** and edit the following:
     - **$piHole = "";** Set this to your Pi-hole URL. For example, http://192.168.1.2/admin
     - **$apiKey = ;** Enter your API key here
-5. Launch **index.php**
+7. In a console, type `sudo usermod -aG video www-data`. This is needed to fetch temperature data on the Raspberry Pi.
+8. Reboot the Raspberry Pi.
+9. Launch **index.php**
 
 # Usage
 To disable Pi-hole ad-blocking, click on **Disable**. This will disable ad-blocking infinitely.
