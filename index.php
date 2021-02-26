@@ -134,10 +134,10 @@
 
     // Print the results
     printf("
-    Status: %s <br />
-    Temp: %s </br />
-    Uptime: %s <br />
-    Domains blocked: %s <br />
+    Ad-block Status: %s <br />
+    Temperature: %s </br />
+    System Uptime: %s <br />
+    Domains Blocked: %s <br />
     Total Queries: %s <br />
     Ads Blocked Today: %s <br />
     Percent Blocked: %u%% <br />

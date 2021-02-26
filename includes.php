@@ -38,12 +38,15 @@
     //  sudo usermod -aG video www-data
     // Then reboot the Raspberry Pi.
     // Source: https://stackoverflow.com/questions/30151661/running-vcgencmd-from-php-exec
-    $getTemp = exec("vcgencmd measure_temp | egrep -o '[0-9]*\.[0-9]*'");
+    $getTemp = shell_exec("vcgencmd measure_temp | egrep -o '[0-9]*\.[0-9]*'");
     
+    // Get system uptime
+    $upTime = shell_exec("uptime -p");
+
     // Get the results (JSON)
     $JSONResult = file_get_contents($apiUrl);
      
-    //Decode the JSON results
+    // Decode the JSON results
     $JSON = json_decode($JSONResult, true);
     
     // Get the status results
@@ -57,11 +60,6 @@
     $dnsQueries = $JSON['dns_queries_today'];
     $adsBlocked = $JSON['ads_blocked_today'];
     $percentAdsBlocked = $JSON['ads_percentage_today'];
-    // Get the uptime values
-    $upTimeDays = $JSON['gravity_last_updated']['relative']['days'];
-    $upTimeHours = $JSON['gravity_last_updated']['relative']['hours'];
-    $upTimeMinutes = $JSON['gravity_last_updated']['relative']['minutes'];
-    // Combine these into the upTime variable
-    $upTime = " Days: " . $upTimeDays . " Hours: " . $upTimeHours . " Minutes: " . $upTimeMinutes;
     $temp = $getTemp . "&deg;C"
+
 ?>
