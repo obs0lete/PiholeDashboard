@@ -5,7 +5,7 @@ A simple web interface to quickly disable Pi-hole ad-blocking and show some basi
 
 # Requirements
 - A Pi-hole
-- Raspberry Pi (this should work on other devices, but you'll need to adjust how the temperature stats are fetched for your device in the `includes.php` file.)
+- Raspberry Pi (this should work on other devices, but you'll need to adjust how the temperature and uptime stats are fetched for your device in the `includes.php` file for your respecitve system)
 - Web server (nginx)
 - PHP 7.2
 - php-curl
