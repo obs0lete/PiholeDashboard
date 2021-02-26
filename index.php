@@ -34,7 +34,7 @@
                     alert("You must enter a nummber greater than 0.");
                     return false;
                 } else {
-                    alert("Pi-hole ad-blocking will be disabled for " + val + " minute(s).\nAfter this time, Pi-hole will re-enable ad-blocking by itself.");
+                    alert("Pi-hole ad-blocking will be disabled for " + val + " minute(s).\nPi-hole will re-enable ad-blocking automatically.\n\nYou can manually re-enable by pressing the Enable button.");
                 return true;
                 }
             }
@@ -47,14 +47,15 @@
                 <div class="col-md-4">
 
                     <!-- Pi-hole section -->
-                    <h2>
+                    <h1>
                         Pi-hole Toggle
-                    </h2>
+                    </h1>
+                    <br /><br />
                         Click <strong>Disable</strong> to indefinitely disable ad-blocking.
                         <br/>
                         Once you have finished, click <strong>Enable.</strong>
                         <br/>
-                        You can also disable Pi-hole ad-blocking for a few minutes by entering a number in the textbox below and pressing the <strong>Disable (mins)</strong> button.
+                        To disable for a specific length of time enter the value (in minutes) in the text-box below and press <strong>Disable (mins)</strong>.
                         <br/><br/>
                          <p></p>
 
