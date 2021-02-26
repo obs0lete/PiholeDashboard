@@ -9,13 +9,15 @@ A simple web interface to quickly disable Pi-hole ad-blocking and show some basi
 - Web server (nginx)
 - PHP 7.2
 - php-curl
+- git
 
 # Getting started
-1. Install **PHP 7.2**, **php-curl** and a **websevr (nginx)**.
+1. Install **PHP 7.2**, **php-curl**, **git** and a **websevr (nginx)**.
 2. Log into your Pi-hole and go to **Settings > API/Web Interface**.
 3. Click on the **Show API token** button, then **Yes, show API token**.
 4. Copy your **API token**.
-5. Edit the **includes.php** and edit the following:
+5. Copy the code to your machine: `git clone https://github.com/obs0lete/PiholeDashboard.git`
+6. Edit the **includes.php** and edit the following:
     - **$piHole = "";** Set this to your Pi-hole URL. For example, http://192.168.1.2/admin
     - **$apiKey = ;** Enter your API key here
 7. In a console, type `sudo usermod -aG video www-data`. This is needed to fetch temperature data on the Raspberry Pi.
