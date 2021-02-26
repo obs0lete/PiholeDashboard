@@ -158,7 +158,7 @@
     <!-- Disable (min) buttons -->
     <form action="disableTime.php" method="post">
         <div class="input-group mb-3">
-            <input type="number" class="form-control" id="disableTime" name="disableTime" aria-label="disableTime" placeholder="0" min="1" required>
+            <input type="number" class="form-control" id="disableTime" name="disableTime" aria-label="disableTime" placeholder="0" min="1" oninput="this.value=(parseInt(this.value)||0)" required>
                 <div class="input-group-append">
                 &emsp;<button type="submit" name="submit" class="btn btn-outline-info" type="button" onclick="getInputValue();">Disable (mins)</button>
                 </div>
