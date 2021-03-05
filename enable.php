@@ -7,7 +7,7 @@ include 'includes.php';
 // Create cURL connection
 $curl_connection = curl_init($enableUrl);
 
-// Cet options
+// Set options
 curl_setopt($curl_connection, CURLOPT_CONNECTTIMEOUT, 30);
 curl_setopt($curl_connection, CURLOPT_USERAGENT, "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)");
 curl_setopt($curl_connection, CURLOPT_RETURNTRANSFER, true);
