@@ -178,6 +178,10 @@
                 </div>
         </div>
     </form>
+    <!-- Version -->
+    <div class="version">
+        <?php echo $version;?>
+    </div>
 
     <!-- Scripts -->
     <script src="js/tether.min.js"></script>

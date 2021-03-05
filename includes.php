@@ -9,9 +9,11 @@
      5. sudo service nginx restart
      */
 
+    // Set version
+    $version = "1.01.20210305";
+
     // Set your Pi-hole IP/URL here
     // Ex: $piHole = "http://192.168.1.2/admin";
-    
     $piHole = "";
 
     // Set your API key here
@@ -32,6 +34,9 @@
     // Last blocked domain
     $getLastBlocked = $piHole . "/api.php?recentBlocked&auth=" . $apiKey;
     $lastBlocked = file_get_contents("$getLastBlocked");
+
+    // Get sources
+    $getSources = $apiUrl . "/api.php?topClients&auth=" . $apiKey;
 
     // Get the system temperature
     // Note: For this to work, you need to add www-data to the video group:
