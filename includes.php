@@ -10,7 +10,7 @@
      */
 
     // Set version
-    $version = "1.01.20210305";
+    $version = "1.02.20210305";
 
     // Set your Pi-hole IP/URL here
     // Ex: $piHole = "http://192.168.1.2/admin";
