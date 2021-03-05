@@ -51,8 +51,10 @@
     
     // Get the status results
     $statusResult = $JSON['status'];
+    // If status is 'enabled', then change the font to green...
     if ($statusResult == 'enabled') {
         $statusResult = "<span style='color: #21a75a; font-weight: bold; text-transform: uppercase;'>$statusResult</span>";
+    // ... else change it to red as we assume Pi-hole is disabled.
     } else {
         $statusResult = "<span style='color: #ff0000; font-weight: bold; text-transform: uppercase;'>$statusResult</span>";
     }
@@ -60,6 +62,17 @@
     $dnsQueries = $JSON['dns_queries_today'];
     $adsBlocked = $JSON['ads_blocked_today'];
     $percentAdsBlocked = $JSON['ads_percentage_today'];
-    $temp = $getTemp . "&deg;C"
 
+    // If temp is less tha 63, show green text...
+    if ($getTemp < '63') {
+        $temp = "<span style='color: #21a75a; font-weight: bold; text-transform: uppercase;'>" . $getTemp . "&deg;C</span>";
+    }
+    // ... if it's between 63-75 then show a warning...
+    else if ($getTemp > '63' && $getTemp < '75') {
+        $temp = "<span style='color: #b2841b; font-weight: bold; text-transform: uppercase;'>" . $getTemp . "&deg;C WARNING</span>";
+    }
+    // ... if it's higher than 75, there's a problem so show danger.
+    else if ($getTemp >= '75') {
+        $temp = "<span style='color: #ff0000; font-weight: bold; text-transform: uppercase;'>" . $getTemp . "&deg;C DANGER</span>";
+    }
 ?>
