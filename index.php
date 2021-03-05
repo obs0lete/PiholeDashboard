@@ -45,30 +45,18 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4">
-
-                    <!-- Pi-hole section -->
-                    <h1>
-                        Pi-hole Toggle
-                    </h1>
+                    <!-- Header -->
+                    <h1>Pi-hole Toggle</h1>
                     <br /><br />
-                        Click <strong>Disable</strong> to indefinitely disable ad-blocking.
-                        <br/>
-                        Once you have finished, click <strong>Enable.</strong>
-                        <br/>
-                        To disable for a specific length of time enter the value (in minutes) in the text-box below and press <strong>Disable (mins)</strong>.
-                        <br/><br/>
-                         <p></p>
+                    Click <strong>Disable</strong> to disable ad-blocking.
+                    <br/>
+                    Once you have finished, click <strong>Enable.</strong>
+                    <br/>
 
 <?php
     include 'includes.php';
-
         // Prevent caching
-        header("Expires: Tue, 03 Jul 2001 06:00:00 GMT");
-        header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
-        header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-        header("Cache-Control: post-check=0, pre-check=0", false);
-        header("Pragma: no-cache");
-        header("Connection: close");
+        header("Cache-Control: max-age=0, must-revalidate");
 
         // Check if the $piHole variable has been set
         if (empty($piHole)) {
@@ -130,21 +118,46 @@
 
     <!-- Print the Pi-hole IP/URL -->
     <div id="results">
-    Pi-hole URL: <a href="<?php echo $piHole; ?>" class="alert-link"><?php echo $piHole; ?></a><br />
-    <?php
+    <br />
+    Pi-hole URL: <a href="
+        <?php echo $piHole; ?>" class="alert-link">
+        <?php echo $piHole; ?>
+        </a><br />
+        <?php printf("Last Blocked: %s <br />", $lastBlocked);?><br />
+    <table class="table">
+    <thead class="thead-dark">
+        </thead>
+            <tbody>
+            <!-- First row -->
+                <tr>
+                    <td>
+                        <?php printf("Ad-block Status: %s", $statusResult);?>
+                    </td>
 
-    // Print the results
-    printf("
-    Ad-block Status: %s <br />
-    Temperature: %s </br />
-    System Uptime: %s <br />
-    Domains Blocked: %s <br />
-    Total Queries: %s <br />
-    Ads Blocked Today: %s <br />
-    Percent Blocked: %u%% <br />
-    Last Blocked: %s <br />
-    ", $statusResult, $temp, $upTime, $domainsBlocked, $dnsQueries, $adsBlocked, $percentAdsBlocked, $lastBlocked);
-    ?>
+                    <td>
+                        <?php printf("Uptime: %s", $upTime);?>
+                    </td>
+
+                    <td>
+                        <?php printf("Temperature: %s", $temp);?>
+                    </td>
+                </tr>
+                <!-- Second row -->
+                <tr>
+                    <td>
+                        <?php printf("Total Queries: %s", $dnsQueries);?>
+                    </td>
+
+                    <td>
+                        <?php printf("Domains Blocked: %s", $domainsBlocked);?>
+                    </td>
+
+                    <td>
+                        <?php printf("Ads Blocked Today: %s", $adsBlocked);?>
+                    </td>
+                </tr>
+             </tbody>    
+        </table>
     <br />
     </div>
 
