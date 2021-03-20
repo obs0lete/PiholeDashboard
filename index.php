@@ -180,7 +180,7 @@
     </form>
     <!-- Version -->
     <div class="version">
-        <?php echo $version;?>
+    <a href="https://github.com/obs0lete/PiholeDashboard"><?php echo $version;?></a>
     </div>
 
     <!-- Scripts -->

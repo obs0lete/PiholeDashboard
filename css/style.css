@@ -3,6 +3,10 @@ body {
   background-color: #2e2e2e;
 }
 
+a:link, a:visited, a:active, a:hover {
+  color: #0275d8;
+}
+
 .h1, h1 {
 border-bottom: 1px solid #a55151;
 display: inline;
