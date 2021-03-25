@@ -24,7 +24,7 @@
         <meta name="msapplication-config" content="https://toggle.obs0lete.com/imgs/favicons/browserconfig.xml?v=5AB4KMlkQk">
         <meta name="theme-color" content="#ffffff">
 
-        <!-- Create an alert when disabling per X mins -->
+        <!-- Create an alert when disabling for X mins -->
         <script>
         function getInputValue(){
             var val = document.getElementById("disableTime").value;
