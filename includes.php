@@ -33,10 +33,11 @@
     //  sudo usermod -aG video www-data
     // Then reboot the Raspberry Pi.
     // Source: https://stackoverflow.com/questions/30151661/running-vcgencmd-from-php-exec
-    // This will be different for other hardware.
+    // This may be different for other hardware.
     $getTemp = shell_exec("vcgencmd measure_temp | egrep -o '[0-9]*\.[0-9]*'");
     
     // Get system uptime
+    // This may be different for other hardware.
     $upTime = shell_exec("uptime -p");
 
     // Get the results (JSON)
