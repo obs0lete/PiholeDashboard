@@ -1,6 +1,6 @@
 <?php
     // Set version
-    $version = "1.0.20210325";
+    $version = "1.03.20210325";
 
     // Set your Pi-hole IP/URL here
     // Ex: $piHole = "http://pi.hole/admin";
