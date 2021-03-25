@@ -32,7 +32,7 @@ Note: Make sure to replace `some.server` with the FQDN that you will use to acce
 $HTTP["host"] == "some.server" {
     # Ensure the Pi-hole Block Page knows that this is not a blocked domain
     setenv.add-environment = ("fqdn" => "true")
-    server.document-root = "/var/www/html/piholetoggle/"
+    server.document-root = "/var/www/html/piholedashboard/"
 }
 ```
 Note: If you want to access this via HTTPS, you will need to use the following instead of the above code. You will need to adjust the values of `ssl.pemfile` and `ssl.ca-file` to pooint to your certificates accorrdingly. 

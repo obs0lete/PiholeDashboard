@@ -17,8 +17,8 @@
         <link rel="manifest" href="/imgs/favicons/site.webmanifest?v=5AB4KMlkQk">
         <link rel="mask-icon" href="/imgs/favicons/safari-pinned-tab.svg?v=5AB4KMlkQk" color="#5a5a59">
         <link rel="shortcut icon" href="/imgs/favicons/favicon.ico?v=5AB4KMlkQk">
-        <meta name="apple-mobile-web-app-title" content="Pi-hole Toggle">
-        <meta name="application-name" content="Pi-hole Toggle">
+        <meta name="apple-mobile-web-app-title" content="Pi-hole ">
+        <meta name="application-name" content="Pi-hole Dashboard">
         <meta name="msapplication-TileColor" content="#5a5a59">
         <meta name="msapplication-TileImage" content="/imgs/favicons/mstile-144x144.png?v=5AB4KMlkQk">
         <meta name="msapplication-config" content="/imgs/favicons/browserconfig.xml?v=5AB4KMlkQk">
