@@ -71,7 +71,8 @@ $HTTP["host"] == "some.server" {
 
 ## Install on a seperate server
 Note: The web server setup is out of the scope of this guide. You will need to configure a working web server yourself. 
-Note: Depending on the hardware this is running on, you will need to configure the `$getTemp` variable in the `includes.php` file with the correct commands to fetch the temperature for your system.
+Note: Depending on the hardware this is running on, you may need to configure the `$getTemp` variable in the `includes.php` file with the correct commands to fetch the temperature for your system.
+Note: Depending on the hardware this is running on, you may need to configure the `$upTime` variable in the `includes.php` file with the correct commands to fetch the uptime for your system.
 1. Install `php7.3`, `php-curl`, `git` and a web server such as `nginx`.
 ```
 sudo apt-get install php7.3
