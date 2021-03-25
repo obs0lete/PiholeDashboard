@@ -28,13 +28,13 @@ Note: Pi-hole already installs PHP and git, so it can be skipped.
     - **$apiKey = ;** Enter your API key here
 9. In your SSH console, edit the `/etc/lighttpd/lighttpd.conf` with your editor of choice and enter the following:
 Note: Make sure to replace **some.server** with the FQDN that you will use to access this application.
-`
+```
 $HTTP["host"] == "some.server" {
     # Ensure the Pi-hole Block Page knows that this is not a blocked domain
     setenv.add-environment = ("fqdn" => "true")
     server.document-root = "/var/www/html/piholetoggle/"
 }
-`
+```
 Note: If you want to access this via HTTPS, you will need to use the following instead of the above code. You will need to adjust the values of `ssl.pemfile` and `ssl.ca-file` to pooint to your certificates accorrdingly. 
 ```
 # Pi-hole Dashboard
@@ -73,12 +73,12 @@ $HTTP["host"] == "some.server" {
 Note: The web server setup is out of the scope of this guide. You will need to configure a working web server yourself. 
 Note: Depending on the hardware this is running on, you will need to configure the `$getTemp` variable in the `includes.php` file with the correct commands to fetch the temperature for your system.
 1. Install `php7.3`, `php-curl`, `git` and a web server such as `nginx`.
-`
+```
 sudo apt-get install php7.3
 sudo apt-get install php-curl
 sudo apt-get install git
 sudo apt-get install nginx
-`
+```
 2. Copy the code to the location your web server's document root: `git clone https://github.com/obs0lete/PiholeDashboard.git`
 3. Log into your Pi-hole (UI) and go to **Settings > API/Web Interface**.
 4. Click on the **Show API token** button, then **Yes, show API token**.
