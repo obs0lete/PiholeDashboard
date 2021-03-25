@@ -14,7 +14,7 @@ A simple web interface to quickly disable Pi-hole ad-blocking and show some basi
 You can either host this application on the same Raspberry Pi where Pi-hole is installed, or set this up on a different machine.
 Below are the steps for both.
 
-## Install alongside Pi-hole on a Raspberry Pi.
+## Install alongside Pi-hole on a Raspberry Pi
 Note: Pi-hole already installs PHP and git, so it can be skipped.
 1. SSH into your Raspberry Pi enter the following to `php-curl`: `sudo apt-get install php-curl`.
 2. Next type in `sudo usermod -aG video www-data`. This is needed to fetch temperature data on a Raspberry Pi.
