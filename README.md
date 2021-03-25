@@ -69,7 +69,7 @@ $HTTP["host"] == "some.server" {
 12. Next, restart lighttpd by entering `sudo systemctl restart lighttpd`.
 13. In a browser, go to http(s)://some.server and the Pi-Hole Daashboard should now be working.
 
-# Install on a seperate server
+## Install on a seperate server
 Note: The web server setup is out of the scope of this guide. You will need to configure a working web server yourself. 
 Note: Depending on the hardware this is running on, you will need to configure the `$getTemp` variable in the `includes.php` file with the correct commands to fetch the temperature for your system.
 1. Install `php7.3`, `php-curl`, `git` and a web server such as `nginx`.
