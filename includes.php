@@ -1,6 +1,6 @@
 <?php
     // Set version
-    $version = "1.02.20210325";
+    $version = "1.0.20210325";
 
     // Set your Pi-hole IP/URL here
     // Ex: $piHole = "http://pi.hole/admin";
@@ -33,6 +33,7 @@
     //  sudo usermod -aG video www-data
     // Then reboot the Raspberry Pi.
     // Source: https://stackoverflow.com/questions/30151661/running-vcgencmd-from-php-exec
+    // This will be different for other hardware.
     $getTemp = shell_exec("vcgencmd measure_temp | egrep -o '[0-9]*\.[0-9]*'");
     
     // Get system uptime
