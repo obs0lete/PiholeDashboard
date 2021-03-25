@@ -6,9 +6,9 @@ A simple web interface to quickly disable Pi-hole ad-blocking and show some basi
 # Requirements
 - Raspberry Pi (this should work on other devices, but you'll need to adjust how the temperature and uptime stats are fetched for your device in the `includes.php` file for your respecitve system)
 - A working Pi-hole installation. See https://pi-hole.net/
-- php7.3
-- php-curl
-- git
+- `php7.3`
+- `php-curl`
+- `git`
 
 # Getting started
 You can either host this application on the same Raspberry Pi where Pi-hole is installed, or set this up on a different machine.
@@ -16,18 +16,18 @@ Below are the steps for both.
 
 ## Install alongside Pi-hole on a Raspberry Pi.
 Note: Pi-hole already installs PHP and git, so it can be skipped.
-1. SSH into your Raspberry Pi enter the following to **php-curl**: `sudo apt-get install php-curl`.
+1. SSH into your Raspberry Pi enter the following to `php-curl`: `sudo apt-get install php-curl`.
 2. Next type in `sudo usermod -aG video www-data`. This is needed to fetch temperature data on a Raspberry Pi.
 3. Next type in `cd /var/www/html/`.
 4. Copy the PiHoleDashboard code to your machine: `git clone https://github.com/obs0lete/PiholeDashboard.git piholedashboard`.
-5. Log into your Pi-hole (UI) and go to **Settings > API/Web Interface**.
-6. Click on the **Show API token** button, then **Yes, show API token**.
-7. Copy your **API token**.
-8. Edit the **includes.php** and as follows:
-    - **$piHole = "";** Set this to your Pi-hole URL. For example, http://pi.hole/admin
-    - **$apiKey = ;** Enter your API key here
+5. Log into your Pi-hole (UI) and go to `Settings > API/Web Interface`.
+6. Click on the `Show API token` button, then `Yes, show API token`.
+7. Copy your `API token`.
+8. Edit the `includes.php` and as follows:
+    - `$piHole = "";` Set this to your Pi-hole URL. For example, http://pi.hole/admin
+    - `$apiKey = ;` Enter your API key here
 9. In your SSH console, edit the `/etc/lighttpd/lighttpd.conf` with your editor of choice and enter the following:
-Note: Make sure to replace **some.server** with the FQDN that you will use to access this application.
+Note: Make sure to replace `some.server` with the FQDN that you will use to access this application.
 ```
 $HTTP["host"] == "some.server" {
     # Ensure the Pi-hole Block Page knows that this is not a blocked domain
@@ -81,17 +81,17 @@ sudo apt-get install git
 sudo apt-get install nginx
 ```
 2. Copy the code to the location your web server's document root: `sudo git clone https://github.com/obs0lete/PiholeDashboard.git`
-3. Log into your Pi-hole (UI) and go to **Settings > API/Web Interface**.
-4. Click on the **Show API token** button, then **Yes, show API token**.
-5. Copy your **API token**.
-6. Edit the **includes.php** and as follows:
-    - **$piHole = "";** Set this to your Pi-hole URL. For example, http://pi.hole/admin
-    - **$apiKey = ;** Enter your API key here
+3. Log into your Pi-hole (UI) and go to `Settings > API/Web Interface`.
+4. Click on the `Show API token` button, then `Yes, show API token`.
+5. Copy your `API token`.
+6. Edit the `includes.php` and as follows:
+    - `$piHole = "";` Set this to your Pi-hole URL. For example, http://pi.hole/admin
+    - `$apiKey = ;` Enter your API key here
 7. In a browser, access the site.
 
 # Usage
-To disable Pi-hole ad-blocking, click on **Disable**. This will disable ad-blocking infinitely.
+To disable Pi-hole ad-blocking, click on `Disable`. This will disable ad-blocking infinitely.
 
-To (re)enable ad-blocking, click on **Enable**.
+To (re)enable ad-blocking, click on `Enable`.
 
-You can also specify how long you want to disable ad-blocking for, in minutes. In the text box, enter the amount of minutes you want to disable as-blocking for, then click on the **Disable (mins)** button.
+You can also specify how long you want to disable ad-blocking for, in minutes. In the text box, enter the amount of minutes you want to disable as-blocking for, then click on the `Disable (mins)` button.
