@@ -1,7 +1,7 @@
 <!DOCTYPE html>
     <html lang="en">
     <head>
-        <title>Pi-hole Toggle</title>
+        <title>Pi-hole Dashboard</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -46,7 +46,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <!-- Header -->
-                    <h1>Pi-hole Toggle</h1>
+                    <h1>Pi-hole Dashboard</h1>
                     <br /><br />
                     Click <strong>Disable</strong> to disable ad-blocking.
                     <br/>

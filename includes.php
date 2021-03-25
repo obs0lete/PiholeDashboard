@@ -1,19 +1,9 @@
 <?php
-
-    /* Make sure that you install php-curl: https://stackoverflow.com/questions/38800606/how-to-install-php-curl-in-ubuntu-16-04
-     Update 2019/09/20: The above link does not seem to work. Use the following code:
-     1. php -v to get the php version
-     2. sudo apt-get install libssl1.1=1.1.1c-1
-     3. sudo apt-get install libcurl4
-     4. sudo apt-get install php7.2-curl (note: this should match php version)
-     5. sudo service nginx restart
-     */
-
     // Set version
-    $version = "1.02.20210305";
+    $version = "1.02.20210325";
 
     // Set your Pi-hole IP/URL here
-    // Ex: $piHole = "http://192.168.1.2/admin";
+    // Ex: $piHole = "http://pi.hole/admin";
     $piHole = "";
 
     // Set your API key here
@@ -38,7 +28,7 @@
     // Get sources
     $getSources = $apiUrl . "/api.php?topClients&auth=" . $apiKey;
 
-    // Get the system temperature
+    // Get the system temperature for Raspberry Pi
     // Note: For this to work, you need to add www-data to the video group:
     //  sudo usermod -aG video www-data
     // Then reboot the Raspberry Pi.
