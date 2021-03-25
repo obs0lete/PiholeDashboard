@@ -12,6 +12,7 @@ A simple web interface to quickly disable Pi-hole ad-blocking and show some basi
 
 # Getting started
 You can either host this application on the same Raspberry Pi where Pi-hole is installed, or set this up on a different machine.
+It is recommended to install alongside Pi-hole on the same Raspberry Pi.
 Below are the steps for both.
 
 ## Install alongside Pi-hole on a Raspberry Pi
