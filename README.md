@@ -36,7 +36,7 @@ $HTTP["host"] == "some.server" {
 }
 `
 Note: If you want to access this via HTTPS, you will need to use the following instead of the above code. You will need to adjust the values of `ssl.pemfile` and `ssl.ca-file` to pooint to your certificates accorrdingly. 
-`
+```
 # Pi-hole Dashboard
 $HTTP["host"] == "some.server" {
   # Ensure the Pi-hole Block Page knows that this is not a blocked domain
@@ -61,7 +61,7 @@ $HTTP["host"] == "some.server" {
     }
   }
 }
-`
+```
 
 10. Next, edit the `/etc/hosts` file and add the IP address and FQDN of your Pi-hole, for example:
 `192.168.1.2   pi.hole`
