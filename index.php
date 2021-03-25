@@ -9,19 +9,19 @@
         <link href="css/style.css" rel="stylesheet">
 
         <!-- Favicon -->
-        <link rel="apple-touch-icon" sizes="180x180" href="https://toggle.obs0lete.com/imgs/favicons/apple-touch-icon.png?v=5AB4KMlkQk">
-        <link rel="icon" type="image/png" sizes="32x32" href="https://toggle.obs0lete.com/imgs/favicons/favicon-32x32.png?v=5AB4KMlkQk">
-        <link rel="icon" type="image/png" sizes="194x194" href="https://toggle.obs0lete.com/imgs/favicons/favicon-194x194.png?v=5AB4KMlkQk">
-        <link rel="icon" type="image/png" sizes="192x192" href="https://toggle.obs0lete.com/imgs/favicons/android-chrome-192x192.png?v=5AB4KMlkQk">
-        <link rel="icon" type="image/png" sizes="16x16" href="https://toggle.obs0lete.com/imgs/favicons/favicon-16x16.png?v=5AB4KMlkQk">
-        <link rel="manifest" href="https://toggle.obs0lete.com/imgs/favicons/site.webmanifest?v=5AB4KMlkQk">
-        <link rel="mask-icon" href="https://toggle.obs0lete.com/imgs/favicons/safari-pinned-tab.svg?v=5AB4KMlkQk" color="#5a5a59">
-        <link rel="shortcut icon" href="https://toggle.obs0lete.com/imgs/favicons/favicon.ico?v=5AB4KMlkQk">
+        <link rel="apple-touch-icon" sizes="180x180" href="/imgs/favicons/apple-touch-icon.png?v=5AB4KMlkQk">
+        <link rel="icon" type="image/png" sizes="32x32" href="/imgs/favicons/favicon-32x32.png?v=5AB4KMlkQk">
+        <link rel="icon" type="image/png" sizes="194x194" href="/imgs/favicons/favicon-194x194.png?v=5AB4KMlkQk">
+        <link rel="icon" type="image/png" sizes="192x192" href="/imgs/favicons/android-chrome-192x192.png?v=5AB4KMlkQk">
+        <link rel="icon" type="image/png" sizes="16x16" href="/imgs/favicons/favicon-16x16.png?v=5AB4KMlkQk">
+        <link rel="manifest" href="/imgs/favicons/site.webmanifest?v=5AB4KMlkQk">
+        <link rel="mask-icon" href="/imgs/favicons/safari-pinned-tab.svg?v=5AB4KMlkQk" color="#5a5a59">
+        <link rel="shortcut icon" href="/imgs/favicons/favicon.ico?v=5AB4KMlkQk">
         <meta name="apple-mobile-web-app-title" content="Pi-hole Toggle">
         <meta name="application-name" content="Pi-hole Toggle">
         <meta name="msapplication-TileColor" content="#5a5a59">
-        <meta name="msapplication-TileImage" content="https://toggle.obs0lete.com/imgs/favicons/mstile-144x144.png?v=5AB4KMlkQk">
-        <meta name="msapplication-config" content="https://toggle.obs0lete.com/imgs/favicons/browserconfig.xml?v=5AB4KMlkQk">
+        <meta name="msapplication-TileImage" content="/imgs/favicons/mstile-144x144.png?v=5AB4KMlkQk">
+        <meta name="msapplication-config" content="/imgs/favicons/browserconfig.xml?v=5AB4KMlkQk">
         <meta name="theme-color" content="#ffffff">
 
         <!-- Create an alert when disabling for X mins -->
