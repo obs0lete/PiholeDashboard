@@ -79,7 +79,7 @@ sudo apt-get install php-curl
 sudo apt-get install git
 sudo apt-get install nginx
 ```
-2. Copy the code to the location your web server's document root: `git clone https://github.com/obs0lete/PiholeDashboard.git`
+2. Copy the code to the location your web server's document root: `sudo git clone https://github.com/obs0lete/PiholeDashboard.git`
 3. Log into your Pi-hole (UI) and go to **Settings > API/Web Interface**.
 4. Click on the **Show API token** button, then **Yes, show API token**.
 5. Copy your **API token**.
