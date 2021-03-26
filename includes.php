@@ -1,6 +1,6 @@
 <?php
     // Set version
-    $version = "1.03.20210325";
+    $version = "1.04.20210326";
 
     // Set your Pi-hole IP/URL here
     // Ex: $piHole = "http://pi.hole/admin";
@@ -25,9 +25,6 @@
     $getLastBlocked = $piHole . "/api.php?recentBlocked&auth=" . $apiKey;
     $lastBlocked = file_get_contents("$getLastBlocked");
 
-    // Get sources
-    $getSources = $apiUrl . "/api.php?topClients&auth=" . $apiKey;
-
     // Get the system temperature for Raspberry Pi
     // Note: For this to work, you need to add www-data to the video group:
     //  sudo usermod -aG video www-data
@@ -38,7 +35,7 @@
     
     // Get system uptime
     // This may be different for other hardware.
-    $upTime = shell_exec("uptime -p");
+    $upTime = shell_exec("uptime -p | awk '{print $2, $3, $4 $5}' | sed 's/,//'");
 
     // Get the results (JSON)
     $JSONResult = file_get_contents($apiUrl);
@@ -55,17 +52,19 @@
     } else {
         $statusResult = "<span style='color: #ff0000; font-weight: bold; text-transform: uppercase;'>$statusResult</span>";
     }
-    $domainsBlocked = $JSON['domains_being_blocked'];
     $dnsQueries = $JSON['dns_queries_today'];
-    $adsBlocked = $JSON['ads_blocked_today'];
-    $percentAdsBlocked = $JSON['ads_percentage_today'];
+    $queriesBlocked = $JSON['ads_blocked_today'];
+    $getPercentAdsBlocked = $JSON['ads_percentage_today'];
+    $percentAdsBlocked = round($getPercentAdsBlocked, 1);
 
     // If temp is less tha 63, show green text...
     if ($getTemp < '63') {
+        // Change &deg;C to &deg;F for Fahrenheit.
         $temp = "<span style='color: #21a75a; font-weight: bold; text-transform: uppercase;'>" . $getTemp . "&deg;C</span>";
     }
     // ... if it's between 63-75 then show a warning...
     else if ($getTemp > '63' && $getTemp < '75') {
+        // Change &deg;C to &deg;F for Fahrenheit
         $temp = "<span style='color: #b2841b; font-weight: bold; text-transform: uppercase;'>" . $getTemp . "&deg;C WARNING</span>";
     }
     // ... if it's higher than 75, there's a problem so show danger.

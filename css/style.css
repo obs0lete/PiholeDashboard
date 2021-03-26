@@ -1,10 +1,10 @@
 body {
   color: #ffffff;
-  background-color: #2e2e2e;
+  background-color: #1C1E1F;
 }
 
 a:link, a:visited, a:active, a:hover {
-  color: #0275d8;
+  color: #4EB3FA;
 }
 
 .h1, h1 {
@@ -30,17 +30,19 @@ height: 50px;
 
 input.form-control {
 max-width: 20% !important;
-background-color: #2e2e2e;
+background-color: #1C1E1F;
 border: none;
-border-bottom: 2px solid #5eb5fa;
+border-bottom: solid 1px #35393C;
 color: #f5f5f5;
 border-radius: 0px;
 font-size: 1.5rem;
+text-align: center;
 }
 
 input.form-control:focus {
-background-color: #2e2e2e !important;
+background-color: #1C1E1F !important;
 color: #f5f5f5;
+text-align: center;
 }
 
 .input-group.mb-3 {
@@ -53,10 +55,17 @@ width: 24em;
   vertical-align: middle;
   table-layout: fixed ;
   width: 25% ;
-  border-bottom: solid 1px #ffffff;
+  border-bottom: solid 1px #35393C;
+  border-top: solid 1px #35393C;
 }
 
 .version {
   font-size: .6em;
   color: #8f8f8f;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }

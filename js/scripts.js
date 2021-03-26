@@ -2,7 +2,7 @@
 
 $(document).ready(function(){
   setInterval(function(){
-        $("#results").load(window.location.href + " #results" );
+        $("#showresults").load(window.location.href + " #showresults" );
   }, 1000);
   });
   

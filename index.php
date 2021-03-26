@@ -9,20 +9,21 @@
         <link href="css/style.css" rel="stylesheet">
 
         <!-- Favicon -->
-        <link rel="apple-touch-icon" sizes="180x180" href="imgs/favicons/apple-touch-icon.png?v=5AB4KMlkQk">
-        <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicons/favicon-32x32.png?v=5AB4KMlkQk">
-        <link rel="icon" type="image/png" sizes="194x194" href="imgs/favicons/favicon-194x194.png?v=5AB4KMlkQk">
-        <link rel="icon" type="image/png" sizes="192x192" href="imgs/favicons/android-chrome-192x192.png?v=5AB4KMlkQk">
-        <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicons/favicon-16x16.png?v=5AB4KMlkQk">
-        <link rel="manifest" href="imgs/favicons/site.webmanifest?v=5AB4KMlkQk">
-        <link rel="mask-icon" href="imgs/favicons/safari-pinned-tab.svg?v=5AB4KMlkQk" color="#5a5a59">
-        <link rel="shortcut icon" href="imgs/favicons/favicon.ico?v=5AB4KMlkQk">
-        <meta name="apple-mobile-web-app-title" content="Pi-hole ">
+        <!-- Image used from Font Awesome: https://fontawesome.com/license -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/imgs/favicons/apple-touch-icon.png?v=WGNvLx9jBM">
+        <link rel="icon" type="image/png" sizes="32x32" href="/imgs/favicons/favicon-32x32.png?v=WGNvLx9jBM">
+        <link rel="icon" type="image/png" sizes="194x194" href="/imgs/favicons/favicon-194x194.png?v=WGNvLx9jBM">
+        <link rel="icon" type="image/png" sizes="192x192" href="/imgs/favicons/android-chrome-192x192.png?v=WGNvLx9jBM">
+        <link rel="icon" type="image/png" sizes="16x16" href="/imgs/favicons/favicon-16x16.png?v=WGNvLx9jBM">
+        <link rel="manifest" href="/imgs/favicons/site.webmanifest?v=WGNvLx9jBM">
+        <link rel="mask-icon" href="/imgs/favicons/safari-pinned-tab.svg?v=WGNvLx9jBM" color="#21a75a">
+        <link rel="shortcut icon" href="/imgs/favicons/favicon.ico?v=WGNvLx9jBM">
+        <meta name="apple-mobile-web-app-title" content="Pi-hole Dashboard">
         <meta name="application-name" content="Pi-hole Dashboard">
-        <meta name="msapplication-TileColor" content="#5a5a59">
-        <meta name="msapplication-TileImage" content="imgs/favicons/mstile-144x144.png?v=5AB4KMlkQk">
-        <meta name="msapplication-config" content="imgs/favicons/browserconfig.xml?v=5AB4KMlkQk">
-        <meta name="theme-color" content="#ffffff">
+        <meta name="msapplication-TileColor" content="#1c1e1f">
+        <meta name="msapplication-TileImage" content="/imgs/favicons/mstile-144x144.png?v=WGNvLx9jBM">
+        <meta name="msapplication-config" content="/imgs/favicons/browserconfig.xml?v=WGNvLx9jBM">
+        <meta name="theme-color" content="#1c1e1f">
 
         <!-- Create an alert when disabling for X mins -->
         <script>
@@ -47,27 +48,27 @@
                 <div class="col-md-4">
                     <!-- Header -->
                     <h1>Pi-hole Dashboard</h1>
-                    <br /><br />
-                    Click <strong>Disable</strong> to disable ad-blocking.
+                    <br/><br/>
+                    Click <strong>Disable</strong> to stop Pi-hole from blocking.
                     <br/>
-                    Once you have finished, click <strong>Enable.</strong>
+                    To start Pi-hole blocking click <strong>Enable.</strong>
                     <br/>
 
 <?php
     include 'includes.php';
         // Prevent caching
-        header("Cache-Control: max-age=0, must-revalidate");
+        header("Cache-Control: max-age=0");
 
         // Check if the $piHole variable has been set
         if (empty($piHole)) {
             ?>
                 <div class="alert alert-dismissable alert-danger">
                     <strong>Pi-hole IP/URL not set!</strong>
-                    <br />
+                    <br/>
                     Make sure you set <strong>$piHole</strong> correctly in <strong>includes.php</strong>.
-                    <br />
+                    <br/>
                     E.g. http://pi.hole/admin/
-                    <br />
+                    <br/>
                 </div>
             <?php
         }
@@ -77,7 +78,7 @@
             ?>
             <div class="alert alert-dismissable alert-danger">
                 <strong>No Pi-hole API Key is set!</strong>
-                <br />
+                <br/>
                     <a id="modal-664008" href="#modal-container-664008" class="alert-link" data-toggle="modal">How do I get my Pi-hole API Key?</a>
 			        <div class="modal fade" id="modal-container-664008" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				        <div class="modal-dialog" role="document">
@@ -92,12 +93,12 @@
 						        </div>
 						            <div class="modal-body">
                                         To get your API Key, choose one of the following options:
-                                        <br /><br />
+                                        <br/><br/>
                                             <ol>
                                                 <li>
                                                     Open a terminal on the device running Pi-hole and type <strong>sudo cat /etc/pihole/setupVars.conf | grep PASSWORD</strong>. Copy the value into the <strong>$apiKey</strong> variable in <strong>includes.php</strong>.
                                                 </li>
-                                                <br />
+                                                <br/>
                                                 <li>
                                                     Go to <strong>http://youripholeip/settings.php?tab=api</strong> and click on the <strong>Show API</strong> button to get your key. Copy the value into the <strong>$apiKey</strong> variable in <strong>includes.php</strong>.
                                                 </li>
@@ -117,13 +118,8 @@
     ?>
 
     <!-- Print the Pi-hole IP/URL -->
-    <div id="results">
-    <br />
-    Pi-hole URL: <a href="
-        <?php echo $piHole; ?>" class="alert-link">
-        <?php echo $piHole; ?>
-        </a><br />
-        <?php printf("Last Blocked: %s <br />", $lastBlocked);?><br />
+    <div id="showresults">
+    <br/>
     <table class="table">
     <thead class="thead-dark">
         </thead>
@@ -131,15 +127,15 @@
             <!-- First row -->
                 <tr>
                     <td>
-                        <?php printf("Ad-block Status: %s", $statusResult);?>
+                        <?php printf("Pi-hole is %s", $statusResult);?>
                     </td>
 
                     <td>
-                        <?php printf("Uptime: %s", $upTime);?>
+                        <?php printf("Up: %s", $upTime);?>
                     </td>
 
                     <td>
-                        <?php printf("Temperature: %s", $temp);?>
+                        <?php printf("%s", $temp);?>
                     </td>
                 </tr>
                 <!-- Second row -->
@@ -149,25 +145,28 @@
                     </td>
 
                     <td>
-                        <?php printf("Domains Blocked: %s", $domainsBlocked);?>
+                        <?php printf("Queries Blocked: %s", $queriesBlocked);?>
                     </td>
 
                     <td>
-                        <?php printf("Ads Blocked Today: %s", $adsBlocked);?>
+                        <?php printf("Percent Blocked: %s", $percentAdsBlocked);?>%
                     </td>
+
                 </tr>
              </tbody>    
         </table>
-    <br />
+        <div>
+            <?php printf("Last Blocked: %s <br/>", $lastBlocked);?><br/>
+        </div>
     </div>
 
     <!-- Enable/Disable buttons -->
     <form>
         <button type="submit" class="btn btn-outline-danger button disable-button" id="disable" method="get" formaction="disable.php">Disable</button>
-        <br /><br />
+        <br/><br/>
         <button type="submit" class="btn btn-outline-success button enable-button" id="enable" method="get" formaction="enable.php">Enable</button>
     </form>
-    <br />
+    <br/>
 
     <!-- Disable (min) buttons -->
     <form action="disableTime.php" method="post">
@@ -180,7 +179,7 @@
     </form>
     <!-- Version -->
     <div class="version">
-    <a href="https://github.com/obs0lete/PiholeDashboard"><?php echo $version;?></a>
+    <a href="https://github.com/obs0lete/PiholeDashboard" target="_blank"><?php echo $version;?></a>
     </div>
 
     <!-- Scripts -->

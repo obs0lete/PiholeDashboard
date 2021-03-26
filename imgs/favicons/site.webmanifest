@@ -1,54 +1,54 @@
 {
     "name": "Pi-hole Dashboard",
-    "short_name": "Pi-hole Dashboard",
+    "short_name": "Pi-hole Dash",
     "icons": [
         {
-            "src": "imgs/favicons/android-chrome-36x36.png?v=5AB4KMlkQk",
+            "src": "/imgs/favicons/android-chrome-36x36.png?v=WGNvLx9jBM",
             "sizes": "36x36",
             "type": "image/png"
         },
         {
-            "src": "imgs/favicons/android-chrome-48x48.png?v=5AB4KMlkQk",
+            "src": "/imgs/favicons/android-chrome-48x48.png?v=WGNvLx9jBM",
             "sizes": "48x48",
             "type": "image/png"
         },
         {
-            "src": "imgs/favicons/android-chrome-72x72.png?v=5AB4KMlkQk",
+            "src": "/imgs/favicons/android-chrome-72x72.png?v=WGNvLx9jBM",
             "sizes": "72x72",
             "type": "image/png"
         },
         {
-            "src": "imgs/favicons/android-chrome-96x96.png?v=5AB4KMlkQk",
+            "src": "/imgs/favicons/android-chrome-96x96.png?v=WGNvLx9jBM",
             "sizes": "96x96",
             "type": "image/png"
         },
         {
-            "src": "imgs/favicons/android-chrome-144x144.png?v=5AB4KMlkQk",
+            "src": "/imgs/favicons/android-chrome-144x144.png?v=WGNvLx9jBM",
             "sizes": "144x144",
             "type": "image/png"
         },
         {
-            "src": "imgs/favicons/android-chrome-192x192.png?v=5AB4KMlkQk",
+            "src": "/imgs/favicons/android-chrome-192x192.png?v=WGNvLx9jBM",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "imgs/favicons/android-chrome-256x256.png?v=5AB4KMlkQk",
+            "src": "/imgs/favicons/android-chrome-256x256.png?v=WGNvLx9jBM",
             "sizes": "256x256",
             "type": "image/png"
         },
         {
-            "src": "imgs/favicons/android-chrome-384x384.png?v=5AB4KMlkQk",
+            "src": "/imgs/favicons/android-chrome-384x384.png?v=WGNvLx9jBM",
             "sizes": "384x384",
             "type": "image/png"
         },
         {
-            "src": "imgs/favicons/android-chrome-512x512.png?v=5AB4KMlkQk",
+            "src": "/imgs/favicons/android-chrome-512x512.png?v=WGNvLx9jBM",
             "sizes": "512x512",
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
+    "theme_color": "#1c1e1f",
+    "background_color": "#1c1e1f",
     "display": "standalone"
 }
