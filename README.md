@@ -36,7 +36,7 @@ $HTTP["host"] == "some.server" {
     server.document-root = "/var/www/html/piholedashboard/"
 }
 ```
-Note: If you want to access this via HTTPS, you will need to use the following instead of the above code. You will need to adjust the values of `ssl.pemfile` and `ssl.ca-file` to pooint to your certificates accorrdingly. 
+Note: If you want to access this via HTTPS, you will need to use the following instead of the above code. You will need to adjust the values of `ssl.pemfile` and `ssl.ca-file` to point to your certificates accorrdingly. 
 ```
 # Pi-hole Dashboard
 $HTTP["host"] == "some.server" {
@@ -70,7 +70,7 @@ $HTTP["host"] == "some.server" {
 12. Next, restart lighttpd by entering `sudo systemctl restart lighttpd`.
 13. In a browser, go to http(s)://some.server and the Pi-Hole Daashboard should now be working.
 
-## Install on a seperate server
+## Install on a separate server
 Note: The web server setup is out of the scope of this guide. You will need to configure a working web server yourself. 
 Note: Depending on the hardware this is running on, you may need to configure the `$getTemp` variable in the `includes.php` file with the correct commands to fetch the temperature for your system.
 Note: Depending on the hardware this is running on, you may need to configure the `$upTime` variable in the `includes.php` file with the correct commands to fetch the uptime for your system.
