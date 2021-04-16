@@ -1,6 +1,6 @@
 <?php
     // Set version
-    $version = "1.04.20210326";
+    $version = "1.04.20210413";
 
     // Set your Pi-hole IP/URL here
     // Ex: $piHole = "http://pi.hole/admin";
@@ -35,7 +35,7 @@
     
     // Get system uptime
     // This may be different for other hardware.
-    $upTime = shell_exec("uptime -p | awk '{print $2, $3, $4 $5}' | sed 's/,//'");
+    $upTime = shell_exec("uptime -p | awk '{print $2, $3, $4, $5, $6, $7, $8, $9}' | sed 's/,//'");
 
     // Get the results (JSON)
     $JSONResult = file_get_contents($apiUrl);
