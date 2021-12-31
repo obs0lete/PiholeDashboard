@@ -68,7 +68,7 @@ $HTTP["host"] == "some.server" {
 `192.168.1.2   pi.hole`
 11. Go back to the Pi-hole UI and nvigate to `Settings > Local DNS > DNS Records` and add entry to resolve `some.server` to the same IP address of your Pi-hole.
 12. Next, restart lighttpd by entering `sudo systemctl restart lighttpd`.
-13. In a browser, go to http(s)://some.server and the Pi-Hole Daashboard should now be working.
+14. In a browser, go to http(s)://some.server and the Pi-Hole Daashboard should now be working.
 
 ## Install on a separate server
 - The web server setup is out of the scope of this guide. You will need to configure a working web server yourself. 
@@ -91,6 +91,8 @@ sudo apt-get install nginx
 7. In a browser, access the site.
 
 # Usage
+Open a web browser an navigate to the IP/address where PiholeDashboard is installed. (https://some.server)
+
 To disable Pi-hole ad-blocking, click on `Disable`. This will disable ad-blocking infinitely.
 
 To (re)enable ad-blocking, click on `Enable`.
