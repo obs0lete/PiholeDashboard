@@ -49,9 +49,9 @@
                     <!-- Header -->
                     <h1>Pi-hole Dashboard</h1>
                     <br/><br/>
-                    Click <strong>Disable</strong> to stop Pi-hole from blocking.
+                    Click <strong>Disable</strong> to disable Pi-hole.
                     <br/>
-                    To start Pi-hole blocking click <strong>Enable.</strong>
+                    To start Pi-hole click <strong>Enable.</strong>
                     <br/>
 
 <?php
