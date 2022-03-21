@@ -11,13 +11,13 @@ A simple web interface to quickly disable Pi-hole ad-blocking and show some basi
 - `git`
 
 # Getting started
-You can either host this application on the same Raspberry Pi where Pi-hole is installed, or set this up on a different machine.
+You can either host this application on the same Raspberry Pi where Pi-hole is installed or set this up on a different machine.
 It is recommended to install alongside Pi-hole on the same Raspberry Pi.
 Below are the steps for both.
 
 ## Install alongside Pi-hole on a Raspberry Pi
 Note: Pi-hole already installs PHP and git, so it can be skipped.
-1. SSH into your Raspberry Pi enter the following to `php-curl`: `sudo apt-get install php-curl`.
+1. SSH into your Raspberry Pi enter the following to install `php-curl`: `sudo apt-get install php-curl`.
 2. Next type in `sudo usermod -aG video www-data`. This is needed to fetch temperature data on a Raspberry Pi.
 3. Next type in `cd /var/www/html/`.
 4. Copy the PiHoleDashboard code to your machine: `git clone https://github.com/obs0lete/PiholeDashboard.git piholedashboard`.
@@ -68,12 +68,12 @@ $HTTP["host"] == "some.server" {
 `192.168.1.2   pi.hole`
 11. Go back to the Pi-hole UI and nvigate to `Settings > Local DNS > DNS Records` and add entry to resolve `some.server` to the same IP address of your Pi-hole.
 12. Next, restart lighttpd by entering `sudo systemctl restart lighttpd`.
-13. In a browser, go to http(s)://some.server and the Pi-Hole Daashboard should now be working.
+14. In a browser, go to http(s)://some.server and the Pi-Hole Daashboard should now be working.
 
 ## Install on a separate server
-Note: The web server setup is out of the scope of this guide. You will need to configure a working web server yourself. 
-Note: Depending on the hardware this is running on, you may need to configure the `$getTemp` variable in the `includes.php` file with the correct commands to fetch the temperature for your system.
-Note: Depending on the hardware this is running on, you may need to configure the `$upTime` variable in the `includes.php` file with the correct commands to fetch the uptime for your system.
+- The web server setup is out of the scope of this guide. You will need to configure a working web server yourself. 
+- Depending on the hardware this is running on, you may need to configure the `$getTemp` variable in the `includes.php` file with the correct commands to fetch the temperature for your system.
+- Depending on the hardware this is running on, you may need to configure the `$upTime` variable in the `includes.php` file with the correct commands to fetch the uptime for your system.
 1. Install `php7.3`, `php-curl`, `git` and a web server such as `nginx`.
 ```
 sudo apt-get install php7.3
@@ -91,6 +91,8 @@ sudo apt-get install nginx
 7. In a browser, access the site.
 
 # Usage
+Open a web browser an navigate to the IP/address where PiholeDashboard is installed. (https://some.server)
+
 To disable Pi-hole ad-blocking, click on `Disable`. This will disable ad-blocking infinitely.
 
 To (re)enable ad-blocking, click on `Enable`.
